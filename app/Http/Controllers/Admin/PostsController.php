@@ -31,10 +31,10 @@ class PostsController extends Controller
 
         $newPost = new Post();
 
-
+        
         $file = $request->file('featured');
         $random_name = time();
-        $destinationPath = 'images/posts/';
+        $destinationPath = Storage::disk('s3')->put('images/posts', $request->file);
         $extension = $file->getClientOriginalExtension();
         $filename = $random_name.'-'.$file->getClientOriginalName();
         $uploadSuccess = $request->file('featured')->move($destinationPath, $filename);
