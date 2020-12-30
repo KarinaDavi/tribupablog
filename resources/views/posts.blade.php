@@ -23,7 +23,7 @@
                    @foreach ($posts as $post)
                     <div class="col-md-4 col-12 justify-content-center mb-5">
                         <div class="card m-auto" style="width: 18rem;">
-                             <img alt=""  src="{{asset('images/posts/'.$post->featured)}}" class="img-fluid" alt="{{$post->title}}">
+                             <img alt=""  src="{{secure_asset('images/posts/'.$post->featured)}}" class="img-fluid" alt="{{$post->title}}">
                             <div class="card-body">
                                 <small class="card-txt-category">Categoría:{{$post->category_id}} </small>
                                 <h5 class="card-title my-2">{{$post->title}}</h5>

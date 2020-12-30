@@ -9,7 +9,7 @@
             <div class="col-10 col-md-12 text-center py-5"  >
                <h1>{{$post->title}}</h1>
                 <hr>
-                <img  src= "{{asset('images/posts/'.$post->featured)}}" alt="{{$post->title}}"   class="card-img-top">
+                <img  src= "{{secure_asset('images/posts/'.$post->featured)}}" alt="{{$post->title}}"   class="card-img-top">
 
                 <p class="text-left mt-3 post-txt">
                     <span>Autor: {{$post->author}}</span>
