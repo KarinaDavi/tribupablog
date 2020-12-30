@@ -13,5 +13,5 @@ class Post extends Model
 
     }
     public $incrementing = false;
-    protected $primaryKey = 'post_id';
+    protected $primaryKey = 'id';
 }

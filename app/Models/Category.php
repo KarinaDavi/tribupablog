@@ -11,5 +11,5 @@ class Category extends Model
     	return $this->hasMany('App\Models\Post');
     }
     public $incrementing = false;
-    protected $primaryKey = 'post_id';
+    protected $primaryKey = 'id';
 }
