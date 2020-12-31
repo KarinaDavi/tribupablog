@@ -41,7 +41,7 @@
                             <td>{{$post->id}}</td>
                             <td>{{$post->category_id}}</td>
                             <td>{{$post->title}}</td>
-                           <td><img src="{{secure_asset('images/posts/'.$post->featured)}}" class="img-fluid img-rounded" width="120px" alt="">
+                           <td><img src="{{asset('https://karinadavidovich.s3-sa-east-1.amazonaws.com/images/posts/'.$post->featured)}}" class="img-fluid img-rounded" width="120px" alt="">
                             </td>
                             <td >{{$post->content}}</td>
                              <td>{{$post->author}}</td>

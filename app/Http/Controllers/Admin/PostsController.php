@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Post;
 use App\Models\Category;
 
@@ -31,14 +32,13 @@ class PostsController extends Controller
 
         $newPost = new Post();
 
-        
+
         $file = $request->file('featured');
-        $random_name = time();
-        $destinationPath = Storage::disk('s3')->put('images/posts', $request->file);
+        $random_name = time(); 
         $extension = $file->getClientOriginalExtension();
         $filename = $random_name.'-'.$file->getClientOriginalName();
-        $uploadSuccess = $request->file('featured')->move($destinationPath, $filename);
-
+        $destinationPath = $request->file('featured')->storeAs('images/posts/',$filename, 's3');
+        $url = '';
 
         $newPost->title = $request->title;
  		$newPost->category_id = $request->category_id;
